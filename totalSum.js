@@ -5,4 +5,4 @@ const totalSum = (number) => {
   }
   console.log(sum);
 }
-totalSum(10);
+totalSum(13);
