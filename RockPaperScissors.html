@@ -1,0 +1,46 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+  </head>
+
+  <body>
+    <h1>Rock Paper Scissors</h1>
+    <div>
+      <p>Think of your hand and press the button!</p>
+      <button id="rock" onclick="rpsGame(0)">Rock</button>
+      <button id="paper" onclick="rpsGame(1)">Paper</button>
+      <button id="scissors" onclick="rpsGame(2)">Scissors</button>
+    </div>
+    <div id="gameResult"></div>
+  
+  
+  
+    <script>
+      const gameResult = document.querySelector("#gameResult");
+      
+      const rpsGame = function(choice) {
+      const gameArr = ["Rock", "Paper", "Scissors"];
+      let gameHand = Math.floor(Math.random() * 3);
+      console.log(gameHand);
+      gameResult.innerText = `You've picked ${gameArr[choice]} and I've picked ${gameArr[gameHand]}`;
+      if (choice === gameHand) {
+        gameResult.innerHTML += "<p>It's a draw!</p>";
+      } else if (choice === 0 && gameHand === 1) {
+        gameResult.innerHTML += "<p>You lose!</p>";
+      } else if (choice === 0 && gameHand === 2) {
+        gameResult.innerHTML += "<p>You win!</p>";
+      } else if (choice === 1 && gameHand === 0) {
+        gameResult.innerHTML += "<p>You win!</p>";
+      } else if (choice === 1 && gameHand === 2) {
+        gameResult.innerHTML += "<p>You lose!</p>";
+      } else if (choice === 2 && gameHand === 1) {
+        gameResult.innerHTML += "<p>You win!</p>";
+      } else 
+      gameResult.innerHTML += "<p>You lose!</p>";
+    }
+    </script>
+  </body>
+
+</html>
