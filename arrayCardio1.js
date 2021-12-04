@@ -32,25 +32,55 @@ const people = [
         // })
 
 let fifteens = inventors.filter(e => (e.year >= 1500 && e.year < 1600)); 
-
-console.log(fifteens);
+                // console.table(fifteens);
+                // console.log(fifteens);
 
 // Array.prototype.map()  // map() will return the SAME length of input array
 // 2. Give us an array of the inventors first and last names
+  // inventors[i].first + inventors[i].last
+let fullNames = inventors.map(e => `${e.first} ${e.last}`)
 
-
-
+                // console.table(fullNames);
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
+    // a.year > b.year ? 1 : -1
+let sortAge = inventors.sort((a, b) => a.year - b.year)
+
+                // console.table(sortAge);
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live all together?
+    //reduce(callbackFn, initialValue)
+    //reduce((previousValue, currentValue, currentIndex, array) => { ... }, initialValue)
+    // sum + (e.passed - e.year)
+let totalAge = inventors.reduce((sum, arr) => {
+  
+  return sum + (arr.passed - arr.year)
+}, 0);
+
+              // console.log(totalAge);
 
 // 5. Sort the inventors by years lived
+    //In task 3 sort by the earliest year born regardless of how long they had lived
+    // firstPerson = firstPerson.passed - firstPerson.year
+    // nextPerson = nextPerson.passed - nextPerson.year
+    // sort firstPerson > nextPerson ? -1 : 1;
+let byYearslived = inventors.sort((a,b) => {
+  const first = a.passed - a.year;
+  const next = b.passed - b.year;
+  return next - first;
+})
+
+            // console.table(byYearslived)
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    //find out the DOM elements first (for querySelect)
+    //turn the nodelist to array using Array.from or [...spread]!
+    //use map() to get just the innerText and filter() with include() to get 'de' street
+
+
 
 
 // 7. sort Exercise
