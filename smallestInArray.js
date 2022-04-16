@@ -1,13 +1,14 @@
 function smallestInArray(array) {
   var minArray = array[0];
-  for (var i = 0; i < array.length; i++){
+  for (var i = 0; i < array.length; i++) {
     if (array[i] < minArray) {
       minArray = array[i];
-    }else {
+    } else {
       minArray = minArray;
     }
   }
-  console.log(minArray);
+  //this is a one-liner=> return Math.min(...array);
+  return minArray;
 }
 
-smallestInArray([3,2,0,5]);
+console.log(smallestInArray([3, 2, 0, 5]));
