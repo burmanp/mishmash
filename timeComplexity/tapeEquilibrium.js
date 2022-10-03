@@ -71,3 +71,4 @@ function solution(A) {
 }
 
 console.log(solution([3, 1, 2, 9, 0, 7, -2]));
+// test commit
